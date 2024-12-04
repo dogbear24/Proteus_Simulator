@@ -435,6 +435,9 @@ int main() {
         int evilWizardSpeech = 0;
         int startCombat = 0;
 
+        bool passed = false;
+        float xClick, yClick;
+
 
         //tracks if the player lost
         bool stillAlive = true;
@@ -460,11 +463,8 @@ int main() {
                         FEHImage startNarratorText;
                         startNarratorText.Open("Texts/Narrator_Text_1.png");
                         startNarratorText.Draw(20, 15);
-                        startTexts++;
-                    }
 
-                    if (198 <= startTexts && startTexts < 210) {
-                        startTexts++;
+                        passed = true;
                     }
 
                     if (205 <= startTexts && startTexts < 410) {
@@ -476,11 +476,8 @@ int main() {
                         FEHImage startNarratorText2;
                         startNarratorText2.Open("Texts/Narrator_text_2.png");
                         startNarratorText2.Draw(20, 15);
-                        startTexts++;
-                    }
 
-                    if (405 <= startTexts && startTexts < 415) {
-                        startTexts++;
+                        passed = true;
                     }
 
                     if (410 <= startTexts && startTexts < 620) {
@@ -492,11 +489,8 @@ int main() {
                         FEHImage startNarratorText3;
                         startNarratorText3.Open("Texts/Narrator_3.png");
                         startNarratorText3.Draw(20, 15);
-                        startTexts++;
-                    }
-
-                    if (605 <= startTexts && startTexts < 615) {
-                        startTexts++;
+                        
+                        passed = true;
                     }
 
                     if (610 <= startTexts && startTexts < 820) {
@@ -507,11 +501,8 @@ int main() {
                         FEHImage startPaimonText;
                         startPaimonText.Open("Texts/Paimon_text.png");
                         startPaimonText.Draw(20, 15);
-                        startTexts++;
-                    }
-
-                    if (815 <= startTexts && startTexts < 825) {
-                        startTexts++;
+                        
+                        passed = true;
                     }
 
                     if (820 <= startTexts && startTexts < 1000) {
@@ -522,11 +513,8 @@ int main() {
                         FEHImage startPaimonText1;
                         startPaimonText1.Open("Texts/Paimon_2.png");
                         startPaimonText1.Draw(20, 15);
-                        startTexts++;
-                    }
 
-                    if (995 <= startTexts && startTexts < 1010) {
-                        startTexts++;
+                        passed = true;
                     }
 
                     if (1005 <= startTexts && startTexts < 1200) {
@@ -537,7 +525,8 @@ int main() {
                         FEHImage startPaimonText2;
                         startPaimonText2.Open("Texts/Paimon_3.png");
                         startPaimonText2.Draw(20, 15);
-                        startTexts++;
+
+                        passed = true;
                     }
 
                     if (startTexts > 1195) {
@@ -1133,7 +1122,7 @@ int main() {
                         if (forestMonosterCombatProgress[0] == 2) {
                             LCD.WriteLine("What is 417 + 194?");
                             LCD.WriteLine("Choices: 511 and 611");
-                            Sleep(30);
+                            Sleep(100);
 
                             //Receive player input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1149,7 +1138,7 @@ int main() {
                         } else if (forestMonosterCombatProgress[1] == 2) {
                             LCD.WriteLine("What is 4147 + 924?");
                             LCD.WriteLine("Choices: 5071 and 5171");
-                            Sleep(30);
+                            Sleep(100);
 
                             //Receive input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1235,6 +1224,7 @@ int main() {
                         } else if (forestBossCombatProgress[2] == 2) {
                             LCD.WriteLine("What is 5710947 + 12470?");
                             LCD.WriteLine("Choices: 1351378 and 5723417");
+                            Sleep(100);
                             
                             //Checks input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1248,8 +1238,9 @@ int main() {
                                 stillAlive = false;
                             }
                         } else if (forestBossCombatProgress[3] == 2) {
-                            LCD.WriteLine("What is 124071294 + 120491790?");
-                            LCD.WriteLine("Choices: 244563084 and 244463084");
+                            LCD.WriteLine("What is 1415 + 1489?");
+                            LCD.WriteLine("Choices: 2904 and 2104");
+                            Sleep(100);
 
                             //Checks input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1345,6 +1336,7 @@ int main() {
                         if (winterMonsterCombatProgress[0] == 2) {
                             LCD.WriteLine("What is the root of 9?");
                             LCD.WriteLine("Choices: 1 and 3");
+                            Sleep(100);
 
                             //Receive input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1360,6 +1352,7 @@ int main() {
                         } else if (winterMonsterCombatProgress[1] == 2) {
                             LCD.WriteLine("What is the root of 256?");
                             LCD.WriteLine("Choices: 16 and 18");
+                            Sleep(100);
 
                             //Receives input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1447,6 +1440,7 @@ int main() {
                         } else if (winterBossCombatProgress[2] == 2) {
                             LCD.WriteLine("What is the root of 361?");
                             LCD.WriteLine("Choices: 19 and 20");
+                            Sleep(100);
 
                             //Receives input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1462,6 +1456,7 @@ int main() {
                         } else if (winterBossCombatProgress[3] == 2) {
                             LCD.WriteLine("What is the root of 8281?");
                             LCD.WriteLine("Choices: 91 and 93");
+                            Sleep(100);
 
                             //Receives input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1554,6 +1549,7 @@ int main() {
                         if (desertSkeletonCombatProgress[0] == 2) {
                             LCD.WriteLine("What is 3!?");
                             LCD.WriteLine("Choices: 6 and 5");
+                            Sleep(100);
 
                             //Receives input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1569,6 +1565,7 @@ int main() {
                         } else if (desertSkeletonCombatProgress[1] == 2) {
                             LCD.WriteLine("What is 6!?");
                             LCD.WriteLine("Choices: 560 and 720");
+                            Sleep(100);
 
                             //Receives input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1654,6 +1651,7 @@ int main() {
                         } else if (desertBossCombatProgress[2] == 2) {
                             LCD.WriteLine("What is 7!?");
                             LCD.WriteLine("Choices: 5110 and 5040");
+                            Sleep(100);
 
                             //Checks input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1669,6 +1667,7 @@ int main() {
                         } else if (desertBossCombatProgress[3] == 2) {
                             LCD.WriteLine("What is 16!/13!?");
                             LCD.WriteLine("Choices: 3360 and 5171");
+                            Sleep(100);
 
                             //Checks input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1772,6 +1771,7 @@ int main() {
                             LCD.WriteLine("integral of 1 over");
                             LCD.WriteLine("a sphere of radius 2?");
                             LCD.WriteLine("Choices: 16pi/3 and 16pi");
+                            Sleep(100);
 
                             //Receives input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1792,6 +1792,7 @@ int main() {
                             LCD.WriteLine("[4, 1; -1.5, -0.5] (left)");
                             LCD.WriteLine("and");
                             LCD.WriteLine("[-2, 1; 1.5, -0.5] (right)");
+                            Sleep(100);
 
                             //Receives input
                             int pressPosition = playerSprite.getPressPositionForMovement(points);
@@ -1877,13 +1878,33 @@ int main() {
 
             //Updates and sleeps
             LCD.Update();
-            Sleep(31);
+            Sleep(1);
 
             //Implements pauses in the program
             if (stillAlive == false) {
                 Sleep(3.);
                 LCD.Clear();
                 break;
+            }
+
+            if (passed) {
+                while(!LCD.Touch(&xClick,&yClick)) {};
+                while(LCD.Touch(&xClick,&yClick)) {};
+                passed = false;
+
+                if (startTexts == 0) {
+                    startTexts = 300;
+                } else if (startTexts == 300) {
+                    startTexts = 500;
+                } else if (startTexts == 500) {
+                    startTexts = 700;
+                } else if (startTexts == 700) {
+                    startTexts = 900;
+                } else if (startTexts == 900) {
+                    startTexts = 1100;
+                } else if (startTexts == 1100) {
+                    startTexts = 1300;
+                }
             }
 
             if (forestMonosterCombatProgress[3] == 2) {
@@ -2298,14 +2319,14 @@ void sprite::characterMovement(class BackGround_DayNight* backdrop, class HitBox
                     canMoveDown = true;
                     canMoveLeft = true;
                     spriteFile = "Sprites/Knight_back.png";
-                    spritePosition.y -= 3;
-                    playerTempHitBox.pairCoords1.y -= 3;
-                    playerTempHitBox.pairCoords2.y -= 3;
+                    spritePosition.y -= 1;
+                    playerTempHitBox.pairCoords1.y -= 1;
+                    playerTempHitBox.pairCoords2.y -= 1;
                     for (int i = 0; i < 8; i++) {
                         if (walls[i].colliding(*player)) {
-                            spritePosition.y += 5;
-                            playerTempHitBox.pairCoords1.y += 5;
-                            playerTempHitBox.pairCoords2.y += 5;
+                            spritePosition.y += 2;
+                            playerTempHitBox.pairCoords1.y += 2;
+                            playerTempHitBox.pairCoords2.y += 2;
                             if (oldPressPosition == 1) {
                                 canMoveUp = false;
                                 canMoveRight = true;
@@ -2344,14 +2365,14 @@ void sprite::characterMovement(class BackGround_DayNight* backdrop, class HitBox
                     canMoveDown = true;
                     canMoveLeft = true;
                     spriteFile = "Sprites/Knight_right.png";
-                    spritePosition.x += 3;
-                    playerTempHitBox.pairCoords1.x += 3;
-                    playerTempHitBox.pairCoords2.x += 3;
+                    spritePosition.x += 1;
+                    playerTempHitBox.pairCoords1.x += 1;
+                    playerTempHitBox.pairCoords2.x += 1;
                     for (int i = 0; i < 8; i++) {
                         if (walls[i].colliding(*player)) {
-                            spritePosition.x -= 5;
-                            playerTempHitBox.pairCoords1.x -= 5;
-                            playerTempHitBox.pairCoords2.x -= 5;
+                            spritePosition.x -= 2;
+                            playerTempHitBox.pairCoords1.x -= 2;
+                            playerTempHitBox.pairCoords2.x -= 2;
                             if (oldPressPosition == 1) {
                                 canMoveUp = false;
                                 canMoveRight = true;
@@ -2390,14 +2411,14 @@ void sprite::characterMovement(class BackGround_DayNight* backdrop, class HitBox
                     canMoveRight = true;
                     canMoveLeft = true;
                     spriteFile = "Sprites/Knight_front.png";
-                    spritePosition.y += 3;
-                    playerTempHitBox.pairCoords1.y += 3;
-                    playerTempHitBox.pairCoords2.y += 3;
+                    spritePosition.y += 1;
+                    playerTempHitBox.pairCoords1.y += 1;
+                    playerTempHitBox.pairCoords2.y += 1;
                     for (int i = 0; i < 8; i++) {
                         if (walls[i].colliding(*player)) {
-                            spritePosition.y -= 5;
-                            playerTempHitBox.pairCoords1.y -= 5;
-                            playerTempHitBox.pairCoords2.y -= 5;
+                            spritePosition.y -= 2;
+                            playerTempHitBox.pairCoords1.y -= 2;
+                            playerTempHitBox.pairCoords2.y -= 2;
                             if (oldPressPosition == 1) {
                                 canMoveUp = false;
                                 canMoveRight = true;
@@ -2436,14 +2457,14 @@ void sprite::characterMovement(class BackGround_DayNight* backdrop, class HitBox
                     canMoveRight = true;
                     canMoveDown = true;
                     spriteFile = "Sprites/Knight_left.png";
-                    spritePosition.x -= 3;
-                    playerTempHitBox.pairCoords1.x -= 3;
-                    playerTempHitBox.pairCoords2.x -= 3;
+                    spritePosition.x -= 1;
+                    playerTempHitBox.pairCoords1.x -= 1;
+                    playerTempHitBox.pairCoords2.x -= 1;
                     for (int i = 0; i < 8; i++) {
                         if (walls[i].colliding(*player)) {
-                            spritePosition.x += 5;
-                            playerTempHitBox.pairCoords1.x += 5;
-                            playerTempHitBox.pairCoords2.x += 5;
+                            spritePosition.x += 2;
+                            playerTempHitBox.pairCoords1.x += 2;
+                            playerTempHitBox.pairCoords2.x += 2;
                             if (oldPressPosition == 1) {
                                 canMoveUp = false;
                                 canMoveRight = true;
@@ -2489,14 +2510,14 @@ void sprite::characterMovement(class BackGround_DayNight* backdrop, class HitBox
                     canMoveDown = true;
                     canMoveLeft = true;
                     spriteFile = "Sprites/Knight_back.png";
-                    spritePosition.y -= 3;
-                    playerTempHitBox.pairCoords1.y -= 3;
-                    playerTempHitBox.pairCoords2.y -= 3;
+                    spritePosition.y -= 1;
+                    playerTempHitBox.pairCoords1.y -= 1;
+                    playerTempHitBox.pairCoords2.y -= 1;
                     for (int i = 0; i < 3; i++) {
                         if (walls[i].colliding(*player)) {
-                            spritePosition.y += 5;
-                            playerTempHitBox.pairCoords1.y += 5;
-                            playerTempHitBox.pairCoords2.y += 5;
+                            spritePosition.y += 2;
+                            playerTempHitBox.pairCoords1.y += 2;
+                            playerTempHitBox.pairCoords2.y += 2;
                             if (oldPressPosition == 1) {
                                 canMoveUp = false;
                                 canMoveRight = true;
@@ -2535,14 +2556,14 @@ void sprite::characterMovement(class BackGround_DayNight* backdrop, class HitBox
                     canMoveDown = true;
                     canMoveLeft = true;
                     spriteFile = "Sprites/Knight_right.png";
-                    spritePosition.x += 3;
-                    playerTempHitBox.pairCoords1.x += 3;
-                    playerTempHitBox.pairCoords2.x += 3;
+                    spritePosition.x += 1;
+                    playerTempHitBox.pairCoords1.x += 1;
+                    playerTempHitBox.pairCoords2.x += 1;
                     for (int i = 0; i < 3; i++) {
                         if (walls[i].colliding(*player)) {
-                            spritePosition.x -= 5;
-                            playerTempHitBox.pairCoords1.x -= 5;
-                            playerTempHitBox.pairCoords2.x -= 5;
+                            spritePosition.x -= 2;
+                            playerTempHitBox.pairCoords1.x -= 2;
+                            playerTempHitBox.pairCoords2.x -= 2;
                             if (oldPressPosition == 1) {
                                 canMoveUp = false;
                                 canMoveRight = true;
@@ -2581,14 +2602,14 @@ void sprite::characterMovement(class BackGround_DayNight* backdrop, class HitBox
                     canMoveRight = true;
                     canMoveLeft = true;
                     spriteFile = "Sprites/Knight_front.png";
-                    spritePosition.y += 3;
-                    playerTempHitBox.pairCoords1.y += 3;
-                    playerTempHitBox.pairCoords2.y += 3;
+                    spritePosition.y += 1;
+                    playerTempHitBox.pairCoords1.y += 1;
+                    playerTempHitBox.pairCoords2.y += 1;
                     for (int i = 0; i < 3; i++) {
                         if (walls[i].colliding(*player)) {
-                            spritePosition.y -= 5;
-                            playerTempHitBox.pairCoords1.y -= 5;
-                            playerTempHitBox.pairCoords2.y -= 5;
+                            spritePosition.y -= 2;
+                            playerTempHitBox.pairCoords1.y -= 2;
+                            playerTempHitBox.pairCoords2.y -= 2;
                             if (oldPressPosition == 1) {
                                 canMoveUp = false;
                                 canMoveRight = true;
@@ -2627,14 +2648,14 @@ void sprite::characterMovement(class BackGround_DayNight* backdrop, class HitBox
                     canMoveRight = true;
                     canMoveDown = true;
                     spriteFile = "Sprites/Knight_left.png";
-                    spritePosition.x -= 3;
-                    playerTempHitBox.pairCoords1.x -= 3;
-                    playerTempHitBox.pairCoords2.x -= 3;
+                    spritePosition.x -= 1;
+                    playerTempHitBox.pairCoords1.x -= 1;
+                    playerTempHitBox.pairCoords2.x -= 1;
                     for (int i = 0; i < 3; i++) {
                         if (walls[i].colliding(*player)) {
-                            spritePosition.x += 5;
-                            playerTempHitBox.pairCoords1.x += 5;
-                            playerTempHitBox.pairCoords2.x += 5;
+                            spritePosition.x += 2;
+                            playerTempHitBox.pairCoords1.x += 2;
+                            playerTempHitBox.pairCoords2.x += 2;
                             if (oldPressPosition == 1) {
                                 canMoveUp = false;
                                 canMoveRight = true;
